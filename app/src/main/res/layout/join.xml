@@ -222,7 +222,9 @@
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/et_pw"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintVertical_bias="0.812"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
