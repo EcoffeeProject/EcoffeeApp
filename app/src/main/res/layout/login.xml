@@ -60,6 +60,7 @@
         android:hint="UserID"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
+        android:theme="@style/editText_brown"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/textView2"
