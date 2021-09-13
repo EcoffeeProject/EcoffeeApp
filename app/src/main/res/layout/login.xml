@@ -12,7 +12,7 @@
         android:layout_width="333dp"
         android:layout_height="502dp"
 
-        android:background="@drawable/roundLine_brown"
+        android:background="@drawable/roundline_brown"
 
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
