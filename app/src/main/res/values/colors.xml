@@ -9,7 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FEECAA</color>
     <color name="brown">#9B7A63</color>
+    <color name="dark_brown">#705848</color>
+    <color name="dark_brown_alpha">#70705848</color>CC
     <color name="light_gray">#C1C1C1</color>
+    <color name="dark_gray">#ADABAB</color>
     <color name="green">#428681</color>
 
 </resources>
