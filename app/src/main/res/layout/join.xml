@@ -171,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/checkBT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -201,7 +201,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/et_pw3"
+        android:id="@+id/check_pw"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_gravity="center_vertical"
@@ -218,7 +218,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_join"
         android:layout_width="205dp"
         android:layout_height="46dp"
         android:backgroundTint="@color/green"
