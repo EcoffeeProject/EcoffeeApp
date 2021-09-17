@@ -21,6 +21,8 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".OrderActivity"></activity>
         <activity android:name=".JoinActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".DepositActivity"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

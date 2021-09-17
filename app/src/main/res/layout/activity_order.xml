@@ -43,7 +43,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentA"
-        android:name="com.example.ecoffe.FragmentA"
+        android:name="com.example.ecoffe.Step1Fragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="@id/view"
@@ -53,7 +53,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentB"
-        android:name="com.example.ecoffe.FragmentB"
+        android:name="com.example.ecoffe.Step2Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step2"
@@ -61,7 +61,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentC"
-        android:name="com.example.ecoffe.FragmentC"
+        android:name="com.example.ecoffe.Step3Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step3"
@@ -70,7 +70,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentD"
-        android:name="com.example.ecoffe.FragmentD"
+        android:name="com.example.ecoffe.Step4Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step4"
@@ -79,7 +79,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentE"
-        android:name="com.example.ecoffe.FragmentE"
+        android:name="com.example.ecoffe.Step5Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step5"
