@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class MainActivity extends AppCompatActivity implements Serializable {
     protected void onCreate(Bundle savedInstanceStare) {
         super.onCreate(savedInstanceStare);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
 
 
 

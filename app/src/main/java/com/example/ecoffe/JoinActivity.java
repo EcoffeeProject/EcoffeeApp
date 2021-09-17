@@ -32,7 +32,7 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
 
     protected void onCreate(Bundle savedInstanceStare) {
         super.onCreate(savedInstanceStare);
-        setContentView(R.layout.join);
+        setContentView(R.layout.activity_join);
 
 
         //ID값 중복확인

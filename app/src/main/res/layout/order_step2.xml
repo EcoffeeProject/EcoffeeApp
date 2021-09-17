@@ -36,7 +36,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textSize="12dp"
-        android:text="대기시간: 초"
+        android:text="대기시간:"
         app:layout_constraintStart_toEndOf="@+id/step2"
         app:layout_constraintTop_toBottomOf="@+id/step2_ment" />
 

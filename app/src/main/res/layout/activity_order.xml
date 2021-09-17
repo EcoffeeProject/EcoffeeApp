@@ -42,8 +42,8 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentA"
-        android:name="com.example.ecoffe.FragmentA"
+        android:id="@+id/fragment_step1"
+        android:name="com.example.ecoffe.Step1Fragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="@id/view"
@@ -52,16 +52,16 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentB"
-        android:name="com.example.ecoffe.FragmentB"
+        android:id="@+id/fragment_step2"
+        android:name="com.example.ecoffe.Step2Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step2"
         android:layout_marginTop="2dp"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentC"
-        android:name="com.example.ecoffe.FragmentC"
+        android:id="@+id/fragment_step3"
+        android:name="com.example.ecoffe.Step3Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step3"
@@ -69,8 +69,8 @@
        />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentD"
-        android:name="com.example.ecoffe.FragmentD"
+        android:id="@+id/fragment_step4"
+        android:name="com.example.ecoffe.Step4Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step4"
@@ -78,14 +78,13 @@
       />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentE"
-        android:name="com.example.ecoffe.FragmentE"
+        android:id="@+id/fragment_step5"
+        android:name="com.example.ecoffe.Step5Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/order_step5"
         android:layout_marginTop="2dp"
         />
-
 
 </LinearLayout>
 

@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
     protected void onCreate(Bundle savedInstanceStare) {
         super.onCreate(savedInstanceStare);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
 
 
         et_id = findViewById(R.id.et_id);
