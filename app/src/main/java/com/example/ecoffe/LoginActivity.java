@@ -1,8 +1,13 @@
 package com.example.ecoffe;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,10 +19,17 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity implements Serializable {
 
@@ -26,11 +38,18 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
     private TextView btn_register;
     private Button btn_login;
 
+    Intent intent;
+    User user;
+
+
 
 
     protected void onCreate(Bundle savedInstanceStare) {
         super.onCreate(savedInstanceStare);
         setContentView(R.layout.activity_login);
+
+        intent = getIntent();
+        user = (User) intent.getSerializableExtra("user");
 
 
         et_id = findViewById(R.id.et_id);
@@ -66,9 +85,13 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                 intent.putExtra("userId",userID);
                                 intent.putExtra("userPassword",userPassword);
-                                User user = new User(userID,userPassword);
+
+
+                                user = new User(userID,userPassword);
+
                                 intent.putExtra("user",user);
                                 startActivity(intent);
+
                             }
                             else{//로그인 실패한 경우
                                 Toast.makeText(getApplicationContext(),"로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
@@ -82,6 +105,8 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                 LoginRequest loginRequest = new LoginRequest(userID,userPassword,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
+
+
             }
         });
 
@@ -89,5 +114,9 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
 
     }
+
+
+
+
 
 }

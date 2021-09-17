@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text=" "
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +52,11 @@
         app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
     <TextView
-        android:id="@+id/tv_stemp"
+        android:id="@+id/tv_stamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="스탬프"
         android:textSize="18dp"
         android:textStyle="bold"
 
@@ -68,10 +68,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="쿠폰"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tv_stemp"
+        app:layout_constraintStart_toStartOf="@+id/tv_stamp"
         app:layout_constraintTop_toBottomOf="@+id/imageView20" />
 
     <ImageView
@@ -80,7 +80,7 @@
         android:layout_height="185dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_stemp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stamp"
         app:srcCompat="@drawable/card" />
 
     <ImageView

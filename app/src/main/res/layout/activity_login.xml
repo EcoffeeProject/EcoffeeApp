@@ -7,6 +7,45 @@
     android:background="@color/yellow">
 
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="179dp"
+        android:layout_height="82dp"
+
+        android:layout_marginStart="264dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/leaf" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="220dp"
+        android:layout_height="83dp"
+
+
+        android:layout_marginStart="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/leaf" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="215dp"
+        android:layout_height="82dp"
+
+        android:layout_marginEnd="240dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/leaf" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="333dp"
@@ -41,21 +80,21 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+
         android:text="아이디"
+
         android:textColor="@color/brown"
-        app:layout_constraintBottom_toTopOf="@+id/et_id"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/et_id"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="108dp"
         android:layout_weight="1"
         android:backgroundTint="@color/brown"
         android:ems="10"
@@ -64,9 +103,9 @@
         android:paddingLeft="10dp"
         android:theme="@style/editText_brown"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView4"
@@ -77,10 +116,10 @@
 
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/et_id"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <EditText
         android:id="@+id/et_pw"
@@ -95,7 +134,7 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.0" />
@@ -127,86 +166,54 @@
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="205dp"
+        android:layout_width="211dp"
         android:layout_height="46dp"
-        android:text="로그인"
         android:backgroundTint="@color/brown"
+        android:text="로그인"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/et_pw"
-        app:layout_constraintVertical_bias="0.207" />
-
+        app:layout_constraintVertical_bias="0.214" />
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        style="?android:attr/borderlessButtonStyle"
+
+        android:layout_width="73dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/white"
         android:text="회원가입"
         android:textColor="@color/brown"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.738"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        style="?android:attr/borderlessButtonStyle"
-        />
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_width="108dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="32dp"
         android:text="아직 회원이 아니신가요?"
         android:textColor="@color/light_gray"
+
+
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="215dp"
-        android:layout_height="82dp"
-
-        android:layout_marginEnd="240dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/leaf" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="179dp"
-        android:layout_height="82dp"
-
-        android:layout_marginStart="264dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/leaf" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="220dp"
-        android:layout_height="83dp"
-
-
-        android:layout_marginStart="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/leaf" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.65" />
 
     <ImageView
         android:id="@+id/imageView8"
