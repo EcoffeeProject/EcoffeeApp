@@ -1,7 +1,10 @@
 package com.example.ecoffe;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +31,7 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
     private Button btn_join, checkBT;
     private AlertDialog dialog;
     private boolean validate = false , checkPW = false;
-
+    private static String TAG = "서버와의 연결 확인중 : ";
 
     protected void onCreate(Bundle savedInstanceStare) {
         super.onCreate(savedInstanceStare);
@@ -63,11 +66,12 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
                     @Override
                     public void onResponse(String response) {
                         try {
-
+                            Log.d(TAG, " 여기까지 들어왔니?1 ");
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-
+                            Log.d(TAG, " 여기까지 들어왔니?2 ");
                             if (success) {
+                                Log.d(TAG, " 여기까지 들어왔니?3 ");
                                 AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                                 dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
                                 dialog.show();
@@ -76,11 +80,13 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
 
                             }
                             else {
+                                Log.d(TAG, " 여기까지 들어왔니?4 ");
                                 AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                                 dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                                 dialog.show();
                             }
                         } catch (JSONException e) {
+                            Log.d(TAG, " 여기까지 들어왔니?5 "+e);
                             e.printStackTrace();
                         }
                     }
@@ -162,5 +168,9 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
 
 
     }
+
+
+
+
 
 }

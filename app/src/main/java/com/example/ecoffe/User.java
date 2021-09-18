@@ -24,15 +24,17 @@ public class User implements Serializable {
      }
 
     void addStamp(){
+        this.stamp +=1;
+
         if(this.stamp == 8){
             this.stamp = 0;
             addCoupon();
         }
 
-        this.stamp +=1;
-
 
     }
+
+
     void addCoupon(){
         this.coupon +=1;
 
