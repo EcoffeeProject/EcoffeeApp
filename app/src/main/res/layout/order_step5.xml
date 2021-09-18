@@ -104,7 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:text="2000원"
+        android:text=""
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/step5_coupon_ment"
         app:layout_constraintTop_toTopOf="@+id/productmoney" />
 
@@ -112,7 +113,8 @@
         android:id="@+id/discount_won"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-1000원"
+        android:text="0원"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/productmoney_won"
         app:layout_constraintTop_toTopOf="@+id/discount" />
 
@@ -120,7 +122,8 @@
         android:id="@+id/coupon_aply_won"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-1000원"
+        android:text="0원"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/discount_won"
         app:layout_constraintTop_toTopOf="@+id/coupon_aply" />
 
@@ -128,12 +131,13 @@
         android:id="@+id/paymoney_won"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0원"
+        android:text=""
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/coupon_aply_won"
         app:layout_constraintTop_toTopOf="@+id/paymoney" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/pay_btn"
         android:layout_width="224dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -142,6 +146,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymoney" />
+
+    <TextView
+        android:id="@+id/coupon_use"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/step5_coupon_btn"
+        app:layout_constraintTop_toBottomOf="@+id/step5_coupon_btn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

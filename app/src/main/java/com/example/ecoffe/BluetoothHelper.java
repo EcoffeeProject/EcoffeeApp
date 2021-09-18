@@ -212,16 +212,16 @@ public class BluetoothHelper {
     private void MessageReceived(String msg) {
         // if the listener is attached fire it
         // else put the message into buffer to be read
-        //Log.w("myApp", "[#] Message received: " + msg);
+        Log.w("myApp", "[#] Message received: " + msg);
         try {
             if (listener != null) {
-                //Log.w("myApp", "[#]  Listener fired: onBluetoothHelperMessageReceived");
+                Log.w("myApp", "[#]  Listener fired: onBluetoothHelperMessageReceived");
                 listener.onBluetoothHelperMessageReceived(this, msg); // <---- fire listener
             } else if (!inputMessagesQueue.offer(msg))
-                //Log.w("myApp", "[!] Message thrown (unable to store into buffer): " + msg)
+                Log.w("myApp", "[!] Message thrown (unable to store into buffer): " + msg)
                 ;
         } catch (Exception e) {
-            //Log.w("myApp", "[!] Failed to receive message: " + e.getMessage());
+            Log.w("myApp", "[!] Failed to receive message: " + e.getMessage());
         }
     }
 
@@ -245,29 +245,30 @@ public class BluetoothHelper {
         }
 
         public void run() {
-            //Log.w("myApp", "[#] Output Stream opened");
+            Log.w("myApp", "[#] Output Stream opened");
             // Keep sending messages to OutputStream until an exception occurs
             while (true) {
                 String msg;
                 try {
+
                     msg = outputMessagesQueue.take();
                 } catch (InterruptedException e) {
                     isOutStreamConnected = false;
-                    //Log.w("myApp", "[!] Buffer not available: " + e.getMessage());
+                    Log.w("myApp", "[!] Buffer not available: " + e.getMessage());
                     break;
                 }
                 try {
                     mmOutStream.write(msg.getBytes());
                     mmOutStream.write(Delimiter);
-                    //Log.w("myApp", "[#] Message send: " + msg);
+                    Log.w("myApp", "[#] Message send: " + msg);
                 } catch (IOException e) {
                     isOutStreamConnected = false;
-                    //Log.w("myApp", "[!] Unable to write data to output stream: " + e.getMessage());
+                    Log.w("myApp", "[!] Unable to write data to output stream: " + e.getMessage());
                     break;
                 }
             }
             isOutStreamConnected = false;
-            //Log.w("myApp", "[#] Output stream closed");
+            Log.w("myApp", "[#] Output stream closed");
         }
     }
 
@@ -280,7 +281,7 @@ public class BluetoothHelper {
          * @param bluetoothhelper The BluetoothHelper class
          * @param message The message received
          */
-        public void onBluetoothHelperMessageReceived(BluetoothHelper bluetoothhelper, String message);
+        public void onBluetoothHelperMessageReceived(BluetoothHelper bluetoothhelper, String message) throws InterruptedException;
 
         /**
          * Event fired when the connection status changes.
