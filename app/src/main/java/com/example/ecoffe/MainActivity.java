@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Intent intent ;
     User user;
+
+    ImageView imageStamp1,imageStamp2,imageStamp3,imageStamp4,imageStamp5,imageStamp6,imageStamp7;
+    ImageView couponImage;
+
+    ImageView arr_stamp[]=new ImageView[7];
+
 
     private static String TAG = "phptest_LoadActivity";
     private static final String TAG_JSON = "webnautes";
@@ -59,6 +66,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         charge_button= (Button) findViewById(R.id.charge_button);
         charge_button.setOnClickListener(this);
+
+        imageStamp1= (ImageView) findViewById(R.id.imageStamp1);
+        imageStamp2= (ImageView) findViewById(R.id.imageStamp2);
+        imageStamp3= (ImageView) findViewById(R.id.imageStamp3);
+        imageStamp4= (ImageView) findViewById(R.id.imageStamp4);
+        imageStamp5= (ImageView) findViewById(R.id.imageStamp5);
+        imageStamp6= (ImageView) findViewById(R.id.imageStamp6);
+        imageStamp7= (ImageView) findViewById(R.id.imageStamp7);
+
+        couponImage=(ImageView) findViewById(R.id.couponImage);
+
+        arr_stamp[0] = imageStamp1;
+        arr_stamp[1] = imageStamp2;
+        arr_stamp[2] = imageStamp3;
+        arr_stamp[3] = imageStamp4;
+        arr_stamp[4] = imageStamp5;
+        arr_stamp[5] = imageStamp6;
+        arr_stamp[6] = imageStamp7;
+
 
         MainActivity.GetData task = new MainActivity.GetData(); //서버에서 사용자정보 가져오기
         task.execute("http://auddms.ivyro.net/ECO_loadInfo.php");
@@ -179,10 +205,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     tv_money.setText(user.getBalance()+ "원");
 
                     tv_stamp = (TextView)findViewById(R.id.tv_stamp);
-                    tv_stamp.setText(user.getStamp()+ "/8");
+                    tv_stamp.setText("스탬프 "+user.getStamp()+ "/8");
+
+                   for(int j=0;j<7;j++){ //스탬프 개수만큼 이미지 보이게함
+                       if(user.getStamp()>j)
+                           arr_stamp[j].setVisibility(View.VISIBLE);
+                   }
+                   if(user.getStamp()==8){ //스탬프 8개까지 다 모을경우, 스탬프 전부 다 안보이게 함
+                       for(int j=0;j<7;j++){
+                           arr_stamp[j].setVisibility(View.INVISIBLE);
+                       }
+                   }
+
 
                     tv_coupon = (TextView)findViewById(R.id.tv_coupon);
                     tv_coupon.setText("쿠폰 x"+user.getCoupon());
+
+                    if(user.getCoupon()>0)
+                        couponImage.setVisibility(View.VISIBLE);
+
 
                 }
                 /*
