@@ -66,12 +66,12 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            Log.d(TAG, " 여기까지 들어왔니?1 ");
+
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            Log.d(TAG, " 여기까지 들어왔니?2 ");
+
                             if (success) {
-                                Log.d(TAG, " 여기까지 들어왔니?3 ");
+
                                 AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                                 dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
                                 dialog.show();
@@ -80,13 +80,13 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
 
                             }
                             else {
-                                Log.d(TAG, " 여기까지 들어왔니?4 ");
+
                                 AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                                 dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                                 dialog.show();
                             }
                         } catch (JSONException e) {
-                            Log.d(TAG, " 여기까지 들어왔니?5 "+e);
+
                             e.printStackTrace();
                         }
                     }
