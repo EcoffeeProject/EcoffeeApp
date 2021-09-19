@@ -72,18 +72,14 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
 
                             if (success) {
 
-                                AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
-                                dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
-                                dialog.show();
+                                Toast.makeText(getApplicationContext(),"사용할 수 있는 아이디입니다.",Toast.LENGTH_SHORT).show();
                                 et_id.setEnabled(false); //아이디값 고정
                                 validate = true; //검증 완료
 
                             }
                             else {
 
-                                AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
-                                dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
-                                dialog.show();
+                                Toast.makeText(getApplicationContext(),"이미 존재하는 아이디입니다.",Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
 
@@ -123,9 +119,10 @@ public class JoinActivity extends AppCompatActivity implements Serializable {
                                 JSONObject jsonObject = new JSONObject(response);
                                 boolean success = jsonObject.getBoolean("success");
                                 if (success) { //회원가입 성공한 경우
-                                    Toast.makeText(getApplicationContext(), "회원가입이 성공되었습니다.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "회원가입을 완료하였습니다.", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(JoinActivity.this, LoginActivity.class);
                                     startActivity(intent);
+                                    finish(); //회원가입 완료하면 액티비티 종료
 
                                 } else {//회원가입 실패한 경우
                                     Toast.makeText(getApplicationContext(), "회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show();

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Intent intent ;
     User user;
+    private BackKeyHandler backKeyHandler= new BackKeyHandler(this);
 
     ImageView imageStamp1,imageStamp2,imageStamp3,imageStamp4,imageStamp5,imageStamp6,imageStamp7;
     ImageView couponImage;
@@ -226,15 +227,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 }
-                /*
-                HashMap<String, String> hashMap = new HashMap<>();
-
-                hashMap.put(TAG_ID, id);
-                hashMap.put(TAG_Password, password);
-                hashMap.put(TAG_Balance, balance);
-                hashMap.put(TAG_Stamp, stamp);
-                hashMap.put(TAG_Coupon, coupon);
-*/
 
 
             }
@@ -254,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.order_button:
                 //주문하기 버튼 클릭시 주문 페이지로 이동
                 intent = new Intent(getApplicationContext(), OrderActivity.class);
-                //intent.putExtra("user", user);
+                intent.putExtra("user", user);
                 startActivity(intent);
                 break;
             case R.id.charge_button:
@@ -266,4 +258,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+    @Override
+    public void onBackPressed() { //뒤로가기 버튼 누르면 종료
+        backKeyHandler.onBackPressed();
+    }
+
 }

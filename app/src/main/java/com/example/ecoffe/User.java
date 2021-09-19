@@ -48,18 +48,14 @@ public class User implements Serializable {
         else  return false; //쿠폰사용 안됨
 
     }
+
     void deposit(int money){
         this.balacne += money;
-    }
+    }  //충전하기
 
-    boolean pay(int money){
-        if(this.balacne >= money){
-        this.balacne -= money;
-        return true; //돈 무사히 결제됨
-        }
-else return false; //돈없어서 결제안됨
+    void subBalance(int money){ //결제후 잔액 줄여주기
+        this.balacne+=money;
     }
-
 
 
     String getUserID(){

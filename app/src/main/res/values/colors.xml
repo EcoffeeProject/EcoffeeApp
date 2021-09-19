@@ -15,5 +15,6 @@
     <color name="dark_gray">#ADABAB</color>
     <color name="green">#428681</color>
     <color name="red_brown">#793D25</color>
+    <color name="red_brown_alpha">#BF793D25</color>CC
 
 </resources>

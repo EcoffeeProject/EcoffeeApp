@@ -1,6 +1,7 @@
 package com.example.ecoffe;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
@@ -91,10 +93,10 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
                                 intent.putExtra("user",user);
                                 startActivity(intent);
-
+                                finish(); //메인넘어가면 액티비티 종료
                             }
                             else{//로그인 실패한 경우
-                                Toast.makeText(getApplicationContext(),"로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"아이디 혹은 비밀번호가 틀렸습니다.",Toast.LENGTH_SHORT).show();
                                 return;
                             }
                         } catch (JSONException e) {
@@ -116,6 +118,22 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
     }
 
 
+    @Override
+    public void onBackPressed(){ //뒤로가기 버튼 누르면 종료
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("애플리케이션을 종료하시겠습니까?");
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                finishAffinity();
+                System.runFinalization();
+                System.exit(0);
+            }
+        });
+        builder.setNegativeButton("취소",null);
+        builder.show();
+    }
 
 
 

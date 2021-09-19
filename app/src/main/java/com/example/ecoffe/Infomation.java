@@ -8,6 +8,8 @@ public class Infomation {
     final static public int Americano=2000;
     final static public int CaffeLatte=2500;
     final static public int GreenLatte=3000;
-    final static public int PaySuccess=2;
-    final static public int PayFail=3;
+
+    final static public int PayFail=2;
+    final static public int PaySuccess=3;
+    final static public int PayUseCoupon=4;
 }
