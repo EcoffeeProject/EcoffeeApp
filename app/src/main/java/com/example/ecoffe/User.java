@@ -9,7 +9,7 @@ public class User implements Serializable {
     private  String userPassword;
     private int balacne;
     private int stamp;
-    private int coupon;
+    private int coupon=10;
 
     User(String userID,String userPassword){
         this.userID = userID;

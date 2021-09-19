@@ -33,9 +33,8 @@
         android:id="@+id/americano_img"
         android:layout_width="69dp"
         android:layout_height="116dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/step4"
-        app:layout_constraintTop_toBottomOf="@+id/step4_ment"
+        app:layout_constraintTop_toBottomOf="@+id/choice_info"
         app:srcCompat="@drawable/americano" />
 
     <ImageView
@@ -43,19 +42,17 @@
         android:layout_width="69dp"
         android:layout_height="116dp"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/latte_img"
-        app:layout_constraintTop_toBottomOf="@+id/step4_ment"
+        app:layout_constraintStart_toEndOf="@+id/caffelatte_img"
+        app:layout_constraintTop_toBottomOf="@+id/choice_info"
         app:srcCompat="@drawable/greenlatte" />
 
     <ImageView
-        android:id="@+id/latte_img"
+        android:id="@+id/caffelatte_img"
         android:layout_width="69dp"
         android:layout_height="116dp"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/americano_img"
-        app:layout_constraintTop_toBottomOf="@+id/step4_ment"
+        app:layout_constraintTop_toBottomOf="@+id/choice_info"
         app:srcCompat="@drawable/latte" />
 
     <TextView
@@ -70,15 +67,15 @@
         app:layout_constraintTop_toBottomOf="@+id/americano_img" />
 
     <TextView
-        android:id="@+id/latte"
+        android:id="@+id/caffelatte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="카페라떼"
         android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/latte_img"
-        app:layout_constraintStart_toStartOf="@+id/latte_img"
-        app:layout_constraintTop_toBottomOf="@+id/latte_img" />
+        app:layout_constraintEnd_toEndOf="@+id/caffelatte_img"
+        app:layout_constraintStart_toStartOf="@+id/caffelatte_img"
+        app:layout_constraintTop_toBottomOf="@+id/caffelatte_img" />
 
     <TextView
         android:id="@+id/greenlatte"
@@ -99,6 +96,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greenlatte" />
+
+    <TextView
+        android:id="@+id/choice_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="12dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/step4_ment"
+        app:layout_constraintTop_toBottomOf="@+id/step4_ment" />
+
+    <TextView
+        android:id="@+id/choice_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_brown_alpha"
+        android:text=" [선택 완료시 터치]"
+        android:textSize="12dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/greenlatte_img"
+        app:layout_constraintEnd_toEndOf="@+id/greenlatte_img" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

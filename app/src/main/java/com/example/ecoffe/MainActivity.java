@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.order_button:
                 //주문하기 버튼 클릭시 주문 페이지로 이동
                 intent = new Intent(getApplicationContext(), OrderActivity.class);
-                intent.putExtra("user", user);
+                //intent.putExtra("user", user);
                 startActivity(intent);
                 break;
             case R.id.charge_button:
