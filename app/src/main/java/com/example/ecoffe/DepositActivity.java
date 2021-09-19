@@ -50,27 +50,23 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
                 //입력하기 전
 
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //EditText에 변화가 있을 때
-                depositMoney = Integer.parseInt(et_money.getText().toString());
-                tv_money.setText(String.valueOf(user.getBalance() + depositMoney)+"원");
-
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 //입력이 끝났을 때
+               String etMoney= et_money.getText().toString();
+                if(!etMoney.equals("")) {
+                    depositMoney = Integer.parseInt(etMoney);
+                    tv_money.setText(String.valueOf(user.getBalance() + depositMoney) + "원");
+                }else{
+                    tv_money.setText(String.valueOf(user.getBalance()+"원"));
+                }
 
             }
         });
-
-
-
-
-
-
 
 
     }

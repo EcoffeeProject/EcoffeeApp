@@ -62,6 +62,7 @@
         android:textSize="18dp"
         android:textStyle="bold"
 
+        app:layout_constraintBottom_toTopOf="@+id/imageView20"
         app:layout_constraintStart_toStartOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/order_button" />
 
@@ -78,8 +79,8 @@
 
     <ImageView
         android:id="@+id/imageView20"
-        android:layout_width="337dp"
-        android:layout_height="200dp"
+        android:layout_width="336dp"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_stamp"
@@ -89,20 +90,20 @@
         android:id="@+id/couponImage"
         android:layout_width="327dp"
         android:layout_height="106dp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_coupon"
         app:srcCompat="@drawable/coupon"
-        android:visibility="invisible"/>
+       />
 
     <TextView
         android:id="@+id/tv_money"
-        android:layout_width="90dp"
-        android:layout_height="21dp"
-        android:layout_marginBottom="30dp"
-        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="32dp"
         android:text="TextView"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="@+id/imageView15"
         app:layout_constraintHorizontal_bias="1.0"
@@ -112,91 +113,72 @@
         android:id="@+id/imageStamp1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="42dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.119"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="18dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/imageView20"
         app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        app:srcCompat="@drawable/stamp" />
 
     <ImageView
         android:id="@+id/imageStamp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="3dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.385"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        android:layout_marginStart="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/imageStamp1"
+        app:layout_constraintTop_toTopOf="@+id/imageStamp1"
+        app:srcCompat="@drawable/stamp" />
 
     <ImageView
         android:id="@+id/imageStamp3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.63"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        android:layout_marginStart="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/imageStamp2"
+        app:layout_constraintTop_toTopOf="@+id/imageStamp2"
+        app:srcCompat="@drawable/stamp" />
 
     <ImageView
         android:id="@+id/imageStamp4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        android:layout_marginStart="37dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/imageStamp3"
+        app:layout_constraintTop_toTopOf="@+id/imageStamp3"
+        app:srcCompat="@drawable/stamp" />
 
     <ImageView
         android:id="@+id/imageStamp5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        android:layout_marginTop="26dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/imageStamp1"
+        app:layout_constraintTop_toBottomOf="@+id/imageStamp1"
+        app:srcCompat="@drawable/stamp" />
 
     <ImageView
         android:id="@+id/imageStamp6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.388"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        android:layout_marginStart="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/imageStamp5"
+        app:layout_constraintTop_toTopOf="@+id/imageStamp5"
+        app:srcCompat="@drawable/stamp" />
 
     <ImageView
         android:id="@+id/imageStamp7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20"
-        app:srcCompat="@drawable/stamp"
-        android:visibility="invisible"/>
+        android:layout_marginStart="40dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/imageStamp6"
+        app:layout_constraintTop_toTopOf="@+id/imageStamp6"
+        app:srcCompat="@drawable/stamp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
