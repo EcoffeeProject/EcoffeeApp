@@ -12,4 +12,5 @@ public class Infomation {
     final static public int PayFail=2;
     final static public int PaySuccess=3;
     final static public int PayUseCoupon=4;
+
 }

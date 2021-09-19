@@ -55,6 +55,7 @@ public class OrderActivity extends AppCompatActivity {
         
         if(Step1Fragment.mBluetooth.isConnected())
         Step1Fragment.mBluetooth.Disconnect();   //연결되어있다면 종료시킨다
+        finish();
     }
 
 }

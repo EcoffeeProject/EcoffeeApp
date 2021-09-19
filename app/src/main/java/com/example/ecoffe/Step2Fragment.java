@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Step2Fragment extends Fragment {
 
-    TextView step2_waiting;
+    TextView step2_waiting, papercup_question, papercup_get;
     SharedViewModel sharedViewModel;
 
     static public CountDownTimer timer;
@@ -36,6 +36,20 @@ public class Step2Fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.order_step2, container, false);
         step2_waiting= view.findViewById(R.id.step2_waiting);
+        papercup_question= view.findViewById(R.id.papercup_question);
+        papercup_get= view.findViewById(R.id.papercup_get);
+
+        papercup_get.setOnClickListener(new View.OnClickListener() {
+            int cnt=0;
+            @Override
+            public void onClick(View v) {
+                if(cnt==0){
+                    mBluetooth.SendMessage("Get"); //종이컵 뽑기 메시지 보냄
+                    Log.d("tag","Get신호 보냄");
+                }
+                cnt++;
+            }
+        });
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(Step1Fragment.sharedViewModel.getClass());
 
@@ -76,6 +90,25 @@ public class Step2Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        step2_waiting.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if(s.toString().equals("대기시간: 25초")) {
+                    Log.d("tag",s.toString());
+                    papercup_get.setVisibility(View.VISIBLE);
+                    papercup_question.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
 

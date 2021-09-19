@@ -79,8 +79,6 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
 
                 user.deposit(depositMoney);
 
-
-
                 //충전한 금액 서버로 보내기
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 

@@ -1,6 +1,7 @@
 package com.example.ecoffe;
 
 import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -77,7 +78,8 @@ public class Step1Fragment extends Fragment{
                 else if(message.equals("C"))  //Complete
                 {
                     Log.d("tag", "C들어와서 음료뽑기 완료");
-                }
+                    mBluetooth.Disconnect();  //이젠 블루투스 연결 종료하기
+                 }
             }
 
             @Override

@@ -21,7 +21,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 public class Step5Fragment extends Fragment {
 
-    User user;
+    static User user;
     int coupon ;
     int step4_result= Infomation.Nothing;
     int step3_result= Infomation.Nothing;
@@ -60,13 +60,15 @@ public class Step5Fragment extends Fragment {
 
                 Log.d("tag", "초기화시 들어온 번들임");
                 this.user = (User) getArguments().getSerializable("user");
-
+                Log.d("tag",user.getUserPassword()+"비밀번호");
                 coupon = user.getCoupon();
                 step5_coupon_ment.setText("(보유: " + coupon + "장)");  //보유 쿠폰개수만 보여줌
-                cnt++;
-            } else {
 
-                Log.d("tag", "step4 이후로 들어온 번들임");
+                cnt++;
+            }
+            else {
+
+
                 step3_result = getArguments().getInt("step3_result"); // step3에서 받아온 값 텀블러 or 종이컵
                 step4_result = getArguments().getInt("step4_result"); // step4에서 받아온 값 선택 음료 가격
 
@@ -78,9 +80,9 @@ public class Step5Fragment extends Fragment {
 
                 //텀블러 할인, 쿠폰사용 유무
                 if (step3_result == Infomation.Tumbler) {
-                    Log.d("tag", "step4이후 번들 값");
+                    Log.d("tag", "텀블러");
 
-                    step5_coupon_ment.setText("(사용가능: " + coupon + "장|보유: " + coupon + "장)");
+                    step5_coupon_ment.setText("(사용가능: " + user.getCoupon() + "장|보유: " + user.getCoupon() + "장)");
                     discount_won.setText("-1000원");
                     discount_won.setVisibility(View.VISIBLE);
 
@@ -111,7 +113,7 @@ public class Step5Fragment extends Fragment {
                 } else //PaperCup
                 {
                     Log.d("tag", "step4이후 번들 값");
-                    step5_coupon_ment.setText("(사용가능: 0장|보유: " + coupon + "장)");
+                    step5_coupon_ment.setText("(사용가능: 0장|보유: " +  user.getCoupon() + "장)");
                     discount_won.setVisibility(View.VISIBLE);
 
                     step5_coupon_btn.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +193,10 @@ public class Step5Fragment extends Fragment {
             if(step5_result==Infomation.PayUseCoupon)
                 user.useCoupon();
 
-            //Intent intent = new Intnet(getActivity())
+            Intent intent = new Intent(getActivity(),ReadyActivity.class);
+            intent.putExtra("user",user);
+            getActivity().startActivity(intent);
+            getActivity().finish();
 
         }else if (step5_result==Infomation.PayFail){
 

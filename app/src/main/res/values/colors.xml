@@ -16,5 +16,7 @@
     <color name="green">#428681</color>
     <color name="red_brown">#793D25</color>
     <color name="red_brown_alpha">#BF793D25</color>CC
+    <color name="red_alpha">#92EF484A</color>
+    <color name="light_gray_alpha">#80C1C1C1</color>
 
 </resources>

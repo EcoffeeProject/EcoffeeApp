@@ -54,7 +54,7 @@ public class User implements Serializable {
     }  //충전하기
 
     void subBalance(int money){ //결제후 잔액 줄여주기
-        this.balacne+=money;
+        this.balacne-=money;
     }
 
 
