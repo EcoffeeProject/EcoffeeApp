@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         tv_name = (TextView)findViewById(R.id.tv_name);
-        tv_name.setText(user.getUserPassword()+ " 님, 환영합니다");
+        tv_name.setText(user.getUserID()+ " 님, 환영합니다");
 
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:background="@drawable/ready_background"
 
     >
 
@@ -12,13 +12,111 @@
         android:id="@+id/tv_ready"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="248dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginBottom="252dp"
         android:text="음"
-        android:textColor="@color/dark_brown"
+        android:textColor="@color/red_brown"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ready2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="료"
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready3"
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <TextView
+        android:id="@+id/tv_ready3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="준"
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready2"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready4"
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <TextView
+        android:id="@+id/tv_ready4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비"
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready3"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready5"
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <TextView
+        android:id="@+id/tv_ready5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="중"
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready4"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready6"
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <TextView
+        android:id="@+id/tv_ready6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready5"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready7"
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <TextView
+        android:id="@+id/tv_ready7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready6"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ready8"
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <TextView
+        android:id="@+id/tv_ready8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="110dp"
+        android:text="."
+        android:textColor="@color/red_brown"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ready7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/tv_ready" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="141dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_ready8"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="@+id/tv_ready"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.448"
+        app:srcCompat="@drawable/readyimage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
