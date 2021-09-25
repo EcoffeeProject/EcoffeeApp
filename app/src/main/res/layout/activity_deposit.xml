@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="충전 후 ECOFEE 머니"
+        android:text="충전 후 ECOFFEE 머니"
 
         android:textColor="@color/dark_brown"
         android:textSize="20dp"

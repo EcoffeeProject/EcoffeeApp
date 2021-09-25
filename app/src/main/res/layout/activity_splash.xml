@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-5dp"
-        android:text="ECOFFE"
+        android:text="ECOFFEE"
         android:textColor="@color/red_brown_alpha"
         android:textSize="35dp"
         android:textStyle="bold"

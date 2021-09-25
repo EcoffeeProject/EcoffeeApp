@@ -16,7 +16,7 @@ public class Step4Fragment extends Fragment {
     int step3_result = Infomation.Nothing;
     int step4_result =Infomation.Nothing;
     TextView americano, caffelatte, greenlatte, choice_info, choice_finish;
-    ImageView americano_img, caffelatte_img, greenlatte_img;
+    ImageView americano_img, caffelatte_img, greenlatte_img,highlight;
 
 
     public Step4Fragment() {
@@ -28,6 +28,7 @@ public class Step4Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.order_step4, container, false);
 
+        highlight= view.findViewById(R.id.highlight);
         americano = view.findViewById(R.id.americano);
         caffelatte = view.findViewById(R.id.caffelatte);
         greenlatte = view.findViewById(R.id.greenlatte);
@@ -40,6 +41,7 @@ public class Step4Fragment extends Fragment {
         if (getArguments() != null) {
 
             step3_result = getArguments().getInt("step3_result"); // step1에서 받아온 값 넣기
+            highlight.setVisibility(View.VISIBLE);
 
             americano_img.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -102,6 +104,7 @@ public class Step4Fragment extends Fragment {
             caffelatte_img.setClickable(false);
             greenlatte_img .setClickable(false);
 
+            highlight.setVisibility(View.INVISIBLE);
 
             Bundle bundle = new Bundle(); // 번들을 통해 값 전달
             bundle.putInt("step3_result",step3_result);//번들에 넘길 값 저장

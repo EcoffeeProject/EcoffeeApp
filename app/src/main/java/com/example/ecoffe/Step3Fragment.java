@@ -1,9 +1,13 @@
 package com.example.ecoffe;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +17,7 @@ public class Step3Fragment extends Fragment {
 
     TextView step3_resultment;
     int step3_result =Infomation.Nothing;
+    ImageView highlignt;
 
     public Step3Fragment() {
         // Required empty public constructor
@@ -23,9 +28,11 @@ public class Step3Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.order_step3, container, false);
         step3_resultment= view.findViewById(R.id.step3_resultment);
+        highlignt= view.findViewById(R.id.highlight);
 
         if (getArguments() != null)
         {
+            highlignt.setVisibility(View.VISIBLE);
             step3_result = getArguments().getInt("step3_result"); // step1에서 받아온 값 넣기
 
             if( step3_result ==Infomation.Tumbler){
@@ -48,13 +55,22 @@ public class Step3Fragment extends Fragment {
         super.onResume();
 
         if(step3_result !=Infomation.Nothing){
-            Bundle bundle = new Bundle(); // 번들을 통해 값 전달
-            bundle.putInt("step3_result", step3_result);//번들에 넘길 값 저장
-            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-            Step4Fragment step4Fragment = new Step4Fragment();//프래그먼트2 선언
-            step4Fragment.setArguments(bundle);//번들을 프래그먼트2로 보낼 준비
-            transaction.replace(R.id.fragment_step4, step4Fragment);
-            transaction.commit();
+
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    highlignt.setVisibility(View.INVISIBLE);
+                    Bundle bundle = new Bundle(); // 번들을 통해 값 전달
+                    bundle.putInt("step3_result", step3_result);//번들에 넘길 값 저장
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    Step4Fragment step4Fragment = new Step4Fragment();//프래그먼트2 선언
+                    step4Fragment.setArguments(bundle);//번들을 프래그먼트2로 보낼 준비
+                    transaction.replace(R.id.fragment_step4, step4Fragment);
+                    transaction.commit();
+                }
+            }, 3000);
+
         }
     }
 }

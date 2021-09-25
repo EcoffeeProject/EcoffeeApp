@@ -1,13 +1,12 @@
 package com.example.ecoffe;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     private  String userID;
     private  String userPassword;
-    private int balacne;
+    private int balance;
     private int stamp;
     private int coupon=10;
 
@@ -17,7 +16,7 @@ public class User implements Serializable {
      }
 
      void setInfo(int balacne, int stamp, int coupon){
-        this.balacne = balacne;
+        this.balance = balacne;
         this.stamp = stamp;
         this.coupon = coupon;
 
@@ -30,8 +29,6 @@ public class User implements Serializable {
             this.stamp = 0;
             addCoupon();
         }
-
-
     }
 
 
@@ -50,11 +47,11 @@ public class User implements Serializable {
     }
 
     void deposit(int money){
-        this.balacne += money;
+        this.balance += money;
     }  //충전하기
 
     void subBalance(int money){ //결제후 잔액 줄여주기
-        this.balacne-=money;
+        this.balance -=money;
     }
 
 
@@ -65,7 +62,7 @@ public class User implements Serializable {
         return this.userPassword;
     }
     int getBalance(){
-        return  this.balacne;
+        return  this.balance;
     }
     int getStamp(){
         return  this.stamp;
@@ -73,7 +70,6 @@ public class User implements Serializable {
     int getCoupon(){
         return  this.coupon;
     }
-
 
 
 }

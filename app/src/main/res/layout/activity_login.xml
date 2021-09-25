@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="476dp"
-        android:text="ECOFFE"
+        android:text="ECOffee"
         android:textColor="@color/brown"
         android:textSize="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -142,7 +142,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ECOFFE는 환경을 생각하는 마음에서"
+        android:text="ECOffee는 환경을 생각하는 마음에서"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

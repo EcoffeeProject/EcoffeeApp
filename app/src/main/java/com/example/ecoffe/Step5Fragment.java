@@ -1,6 +1,5 @@
 package com.example.ecoffe;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 public class Step5Fragment extends Fragment {
 
@@ -26,10 +21,11 @@ public class Step5Fragment extends Fragment {
     int step4_result= Infomation.Nothing;
     int step3_result= Infomation.Nothing;
     int step5_result=Infomation.Nothing;
-    static int cnt=0;
+    static int createCnt =0;
 
     TextView step5_coupon_ment,productmoney_won,discount_won,coupon_aply_won,paymoney_won,coupon_use;
     Button step5_coupon_btn, pay_btn;
+    ImageView highlight;
     int paymoney=Infomation.Nothing;
 
     BluetoothHelper mBluetooth= Step1Fragment.mBluetooth;
@@ -44,6 +40,7 @@ public class Step5Fragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.order_step5, container, false);
+        highlight= view.findViewById(R.id.highlight);
         step5_coupon_ment= view.findViewById(R.id.step5_coupon_ment);
         productmoney_won = view.findViewById(R.id.productmoney_won);
         discount_won= view.findViewById(R.id.discount_won);
@@ -56,7 +53,7 @@ public class Step5Fragment extends Fragment {
 
         if(getArguments()!=null) {
 
-            if (cnt == 0) {
+            if (createCnt == 0) {
 
                 Log.d("tag", "초기화시 들어온 번들임");
                 this.user = (User) getArguments().getSerializable("user");
@@ -64,11 +61,11 @@ public class Step5Fragment extends Fragment {
                 coupon = user.getCoupon();
                 step5_coupon_ment.setText("(보유: " + coupon + "장)");  //보유 쿠폰개수만 보여줌
 
-                cnt++;
+                createCnt++;
             }
             else {
 
-
+                highlight.setVisibility(View.VISIBLE);
                 step3_result = getArguments().getInt("step3_result"); // step3에서 받아온 값 텀블러 or 종이컵
                 step4_result = getArguments().getInt("step4_result"); // step4에서 받아온 값 선택 음료 가격
 

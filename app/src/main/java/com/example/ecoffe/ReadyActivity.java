@@ -36,7 +36,7 @@ public class ReadyActivity extends AppCompatActivity implements  Serializable {
         super.onCreate(savedInstanceStare);
         setContentView(R.layout.activity_ready);
 
-        updateUserInfo();
+
 
         tv_ready = (TextView) findViewById(R.id.tv_ready);  //화면 바뀌는 동작
         tv_ready2 = (TextView) findViewById(R.id.tv_ready2);
@@ -90,10 +90,6 @@ public class ReadyActivity extends AppCompatActivity implements  Serializable {
         tv_ready.startAnimation(anim);
 
 
-
-
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -109,15 +105,14 @@ public class ReadyActivity extends AppCompatActivity implements  Serializable {
             }
         }, 5000); //5초뒤에 실행되는 쓰레드
 
+   //
 //총 애니메이션 소요시간 9~10초 정도
-
-
 
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                updateUserInfo();
                 Intent intent = new Intent(ReadyActivity.this, MainActivity.class); //화면 전환
                 startActivity(intent);
                 finish();
@@ -153,7 +148,6 @@ public class ReadyActivity extends AppCompatActivity implements  Serializable {
         queue.add(InfoUpdateRequest);
 
         Toast.makeText(getApplicationContext(), "결제가 완료되었습니다.", Toast.LENGTH_SHORT).show();
-
 
     }
 
