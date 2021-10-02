@@ -18,4 +18,6 @@ public class Infomation {
     final static public int PaySuccess=5;
     final static public int PayUseCoupon=6;
 
+    final static public int Finish=7;
+
 }

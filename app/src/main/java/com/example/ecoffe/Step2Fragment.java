@@ -56,10 +56,11 @@ public class Step2Fragment extends Fragment {
 
         if(getArguments()!=null) {
 
-            if (getArguments().getInt("step2_finish") == 0) {
+            if (getArguments().getInt("step2_finish") != Infomation.Finish) {
 
                 Log.d("tag","step2_finish"+ getArguments().getInt("step2_finish")) ;
                 highlight.setVisibility(View.VISIBLE);
+                Log.d("tag","하이라이트step2비지블");
                 step1_result = getArguments().getInt("step1_result"); // step1에서 받아온 값 넣기
 
                 if (step1_result == Infomation.ConnectSuccess) {
@@ -93,6 +94,7 @@ public class Step2Fragment extends Fragment {
                 step2_waiting.setTextColor(0xFF428681); //초록
                 step2_waiting.setText("무게가 측정되었습니다");
                 highlight.setVisibility(View.INVISIBLE);
+                Log.d("tag","하이라이트step2인비지블");
                 papercup_get.setVisibility(View.INVISIBLE);
                 papercup_question.setVisibility(View.INVISIBLE);
             }

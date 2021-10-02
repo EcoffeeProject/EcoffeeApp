@@ -1,6 +1,7 @@
 package com.example.ecoffe;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,21 +23,34 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+
+
 public class ReadyActivity extends AppCompatActivity implements  Serializable {
     TextView tv_ready,tv_ready2,tv_ready3,tv_ready4,tv_ready5,tv_ready6,tv_ready7,tv_ready8;
     Intent intent;
     User user;
-
+    private TextView tv_bar;
+    private ProgressBar mProgressBar;
     protected void onCreate(Bundle savedInstanceStare) {
 
         intent = getIntent();
         user = (User) intent.getSerializableExtra("user");    //바뀐 User정보 update필요 (스탬프, 잔액, 쿠폰 등)
-
+        updateUserInfo();
 
         super.onCreate(savedInstanceStare);
         setContentView(R.layout.activity_ready);
+        tv_bar = (TextView) findViewById(R.id.tv_bar);
+        mProgressBar = findViewById(R.id.progressBar);
 
-
+        new DownloadTask().execute();
 
         tv_ready = (TextView) findViewById(R.id.tv_ready);  //화면 바뀌는 동작
         tv_ready2 = (TextView) findViewById(R.id.tv_ready2);
@@ -112,12 +126,43 @@ public class ReadyActivity extends AppCompatActivity implements  Serializable {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                updateUserInfo();
+                tv_ready8.startAnimation(anim8);
+                tv_ready7.startAnimation(anim7);
+                tv_ready6.startAnimation(anim6);
+                tv_ready5.startAnimation(anim5);
+                tv_ready4.startAnimation(anim4);
+                tv_ready3.startAnimation(anim3);
+                tv_ready2.startAnimation(anim2);
+                tv_ready.startAnimation(anim);
+
+            }
+        }, 10000); //10초뒤에 실행되는 쓰레드
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                tv_ready8.startAnimation(anim8);
+                tv_ready7.startAnimation(anim7);
+                tv_ready6.startAnimation(anim6);
+                tv_ready5.startAnimation(anim5);
+                tv_ready4.startAnimation(anim4);
+                tv_ready3.startAnimation(anim3);
+                tv_ready2.startAnimation(anim2);
+                tv_ready.startAnimation(anim);
+
+            }
+        }, 15000); //15초뒤에 실행되는 쓰레드
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 Intent intent = new Intent(ReadyActivity.this, MainActivity.class); //화면 전환
+                intent.putExtra("user",user);
                 startActivity(intent);
                 finish();
             }
-        }, 10000);
+        }, 20000); //20초뒤에 실행
 
     }
 
@@ -150,6 +195,51 @@ public class ReadyActivity extends AppCompatActivity implements  Serializable {
         Toast.makeText(getApplicationContext(), "결제가 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
     }
+
+
+
+
+        //로딩바 클래스
+
+        class DownloadTask extends AsyncTask<Void, Integer, Void>{
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                for (int i = 0; i <= 100; i++){
+                    try {
+                        Thread.sleep(190);                  //0.1초 간격으로 sleep
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    final int percent = i;
+                    publishProgress(percent);
+
+                }
+                return null;
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                tv_bar.setText(values[0] +"%");
+                mProgressBar.setProgress(values[0]);
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+            }
+        }
+
+
+
+
+
 
 
 }

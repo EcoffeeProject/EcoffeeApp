@@ -120,25 +120,32 @@ public class Step1Fragment extends Fragment{
 
         if(step1_result!=Infomation.Nothing){
 
+            if(step1_result==Infomation.ConnectFail){
+                return;
+            }
+
             Step2Fragment step2Fragment = new Step2Fragment();//프래그먼트2 선언
             Bundle bundle = new Bundle();
 
             if(step3_result!=Infomation.Nothing)   //텀블러,종이컵 인식후 불려졌을 때 step2 invisble로 바꾸러 감
             {
-                bundle.putInt("step2_finish",Infomation.Nothing);
+                bundle.putInt("step2_finish",Infomation.Finish);
                 Log.d("tag","step2다시 부른다") ;
 
             }
             else  //블루투스 연결 후 처음 step2로 넘김
             {
                 bundle.putInt("step1_result", step1_result);//번들에 넘길 값 저장
+                Log.d("tag","step2처음 넘김");
                 highlight.setVisibility(View.INVISIBLE);
+
             }
 
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             step2Fragment.setArguments(bundle);//번들을 프래그먼트2로 보낼 준비
             transaction.replace(R.id.fragment_step2, step2Fragment);
             transaction.commit();
+
         }
         if(step3_result !=Infomation.Nothing) {
 
@@ -150,6 +157,9 @@ public class Step1Fragment extends Fragment{
             step3Fragment.setArguments(bundle);//번들을 프래그먼트3으로 보낼 준비
             transaction.replace(R.id.fragment_step3, step3Fragment);
             transaction.commit();
+
+            step1_result=Infomation.Nothing;
+            step3_result=Infomation.Nothing;
         }
     }
 }

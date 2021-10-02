@@ -55,6 +55,7 @@ public class Step5Fragment extends Fragment {
 
             if (createCnt == 0) {
 
+                Log.d("tag",createCnt+"");
                 Log.d("tag", "초기화시 들어온 번들임");
                 this.user = (User) getArguments().getSerializable("user");
                 Log.d("tag",user.getUserPassword()+"비밀번호");
@@ -65,9 +66,11 @@ public class Step5Fragment extends Fragment {
             }
             else {
 
+                Log.d("tag",createCnt+"");
                 highlight.setVisibility(View.VISIBLE);
                 step3_result = getArguments().getInt("step3_result"); // step3에서 받아온 값 텀블러 or 종이컵
                 step4_result = getArguments().getInt("step4_result"); // step4에서 받아온 값 선택 음료 가격
+                Log.d("tag","step5들어왔다 선택완료시 터치 버튼 클릭된거임");
 
                 productmoney_won.setText(step4_result + "원");
                 productmoney_won.setVisibility(View.VISIBLE);
@@ -91,6 +94,11 @@ public class Step5Fragment extends Fragment {
                         @Override
                         public void onClick(View v) {
 
+                            if(user.getCoupon()<1){
+                                coupon_use.setTextColor(0xAAef484a); //빨강
+                                coupon_use.setText("사용할 수 있는 쿠폰이 없습니다");
+                                return;
+                            }
                             if (cnt == 0) {
                                 coupon_use.setTextColor(0xFF428681); //초록
                                 coupon_use.setText("쿠폰이 적용되었습니다");
@@ -192,6 +200,7 @@ public class Step5Fragment extends Fragment {
 
             Intent intent = new Intent(getActivity(),ReadyActivity.class);
             intent.putExtra("user",user);
+            createCnt--;
             getActivity().startActivity(intent);
             getActivity().finish();
 
@@ -200,8 +209,7 @@ public class Step5Fragment extends Fragment {
             Intent intent = new Intent(getActivity(), MainActivity.class);
             intent.putExtra("user",user);
             getActivity().startActivity(intent);
-
-            mBluetooth.Disconnect();
+            
             onDetach();
         }
 

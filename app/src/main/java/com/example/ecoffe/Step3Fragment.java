@@ -43,7 +43,7 @@ public class Step3Fragment extends Fragment {
                 step3_resultment.setTextColor(0xAAef484a); //빨강
                 step3_resultment.setText("종이컵 입니다");
             }
-            onResume();
+        //    onResume();
 
         }
 
@@ -70,6 +70,8 @@ public class Step3Fragment extends Fragment {
                     transaction.commit();
                 }
             }, 3000);
+
+            //step3_result=Infomation.Nothing;
 
         }
     }
