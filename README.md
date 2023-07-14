@@ -105,12 +105,15 @@
 </details>
 <br>
 
-### **#B. ECOffee Machine**
+### **#B. ECOffee Machine** 
 #### 단계별 주문하기
 <details>
-<summary>흐름도 보기🔎</summary>
+<summary>흐름도/소스코드 보기🔎</summary>
 
 ![단계별주문](https://github.com/EcoffeeProject/EcoffeeApp/blob/master/images/ordersystem.png)
+<br>
+
+🔗[**Arduino Source Code**](https://github.com/EcoffeeProject/EcoffeeApp/blob/master/ECOFFEE%20Machine/ECOFFEE%20Machine.ino)
 
 </details>
 
@@ -161,7 +164,6 @@
 <br>
 <br>
 
-<br>
 <br>
 
 
