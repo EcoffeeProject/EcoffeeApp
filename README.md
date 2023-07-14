@@ -174,4 +174,8 @@
 <br>
 제4회 KB국민은행 소프트웨어 경진대회 출품
 <br>
+<br>
 
+### 🗂️프로젝트 발표
+[ECOFFEE Projoect PPT 🔎](https://github.com/EcoffeeProject/EcoffeeApp/blob/master/ECOFFEE%20%EC%86%8C%EA%B0%9C%20PPT.pdf)
+<br>
