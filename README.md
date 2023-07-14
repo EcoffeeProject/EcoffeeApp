@@ -157,7 +157,7 @@
 
 [**[YouTube] <span style="font-size:89%">ECOffee: 환경을 바꾸기 위한 작은 실천을 돕다</span>**](https://www.youtube.com/watch?v=bfVl7gEw7QU)
 <br>
-[![Thumbnail](https://github.com/EcoffeeProject/EcoffeeApp/blob/master/images/Tumbnail.jpg)](https://www.youtube.com/watch?v=bfVl7gEw7QU)
+ [![Thumbnail](https://github.com/EcoffeeProject/EcoffeeApp/blob/master/images/intro.gif)](https://www.youtube.com/watch?v=bfVl7gEw7QU)
 <br>
 <br>
 
